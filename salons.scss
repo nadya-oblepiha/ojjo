@@ -1,0 +1,54 @@
+@use 'vars';
+
+@use 'mixins';
+
+.salons {
+  padding: 5% 0;
+  display: grid;
+  grid-template-columns: min(90%, 45rem);
+  grid-template-rows: 4rem 4rem 1fr 7rem;
+  row-gap: 3%;
+  place-content: center;
+  align-items: center;
+  justify-items: center;
+  background: url(./img/background.jpg);
+  min-width: 18rem;
+
+  p:first-child {
+    @include mixins.overhead;
+    align-self: end;
+    color: white;
+
+    @include mixins.media4065rem {
+      font-size: 1rem;
+    }
+  }
+
+  h2 {
+    align-self: start;
+    text-align: center;
+    color: white;
+
+    @include mixins.media4065rem {
+      font-size: 1.2rem;
+      min-width: 16.7rem;
+    }
+  }
+
+  p {
+    text-align: center;
+    font-family: 'GilroyRegular';
+    font-size: 1.1rem;
+    color: white;
+  }
+
+  button {
+    border: none;
+    padding: vars.$pdbt;
+    cursor: pointer;
+
+    @include mixins.media619rem {
+      padding: 0.62rem 1.55rem 0.55rem;
+    }
+  }
+}

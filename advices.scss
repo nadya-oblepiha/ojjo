@@ -1,0 +1,112 @@
+@use 'vars';
+
+@use 'mixins';
+
+.advices {
+  padding: 9vw 0;
+  display: grid;
+  grid-template-columns: repeat(3, 22.3%);
+  grid-template-rows: 1rem 5rem 20vw 5rem;
+  grid-template-areas: "p p p" "h2 h2 h2" ". . ." "button button button";
+  column-gap: 1.5%;
+  row-gap: 4%;
+  place-content: center;
+  justify-items: center;
+  align-items: center;
+  background: #F9F9F9;
+  min-width: 18rem;
+
+  @include mixins.media619rem {
+    grid-template-columns: repeat(3, min(29%, 13.8rem));
+  }
+
+  @include mixins.media4065rem {
+    grid-template-columns: 90%;
+    grid-template-rows: 1rem 4rem 25vw 25vw 25vw 4rem;
+    grid-template-areas: "p" "h2" "." "." "." "button";
+    row-gap: 1%;
+    padding: 20% 0;
+  }
+
+  p {
+    grid-area: p;
+    @include mixins.overhead;
+
+    @include mixins.media4065rem {
+      font-size: 1rem;
+    }
+  }
+
+  h2 {
+    grid-area: h2;
+    align-self: start;
+    text-align: center;
+
+    @include mixins.media4065rem {
+      font-size: 1.2rem;
+      min-width: 16.7rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    white-space: pre-line;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'GilroyRegular';
+    padding-bottom: 10%;
+
+    @include mixins.media813rem {
+      font-size: 1.6vw;
+    }
+
+    @include mixins.media4065rem {
+      font-size: 1rem;
+    }
+  }
+
+  button {
+    grid-area: button;
+    border: none;
+    padding: vars.$pdbt;
+    background: vars.$background;
+    color: white;
+    cursor: pointer;
+    align-self: end;
+
+    @include mixins.media619rem {
+      padding: 0.62rem 1.55rem 0.55rem;
+    }
+  }
+
+  div:nth-child(3) {
+    background: url(./img/advice-1.jpg);
+    @include mixins.cards;
+
+    @include mixins.media4065rem {
+      width: 40%;
+      min-width: 15rem;
+    }
+  }
+
+  div:nth-child(4) {
+    background: url(./img/advice-2.jpg);
+    @include mixins.cards;
+
+    @include mixins.media4065rem {
+      width: 40%;
+      min-width: 15rem;
+    }
+  }
+
+  div:nth-child(5) {
+    background: url(./img/advice-3.jpg);
+    @include mixins.cards;
+
+    @include mixins.media4065rem {
+      width: 40%;
+      min-width: 15rem;
+    }
+  }
+}

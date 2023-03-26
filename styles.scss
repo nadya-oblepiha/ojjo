@@ -1,0 +1,54 @@
+@use 'header';
+
+@use 'hero';
+
+@use 'events';
+
+@use 'salons';
+
+@use 'advices';
+
+@use 'media';
+
+@use 'mailing';
+
+@use 'footer';
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #333333;
+}
+
+h2 {
+  font-size: 1.9rem;
+  font-family: 'NotoserifBold';
+}
+
+@font-face {
+  font-family: "GilroyRegular";  
+  src: url("./fonts/gilroy-regular.woff2") format("woff2"); 
+  font-style: normal; 
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "GilroyMedium";  
+  src: url("./fonts/gilroy-medium.woff2") format("woff2"); 
+  font-style: normal; 
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "GilroySemibold";  
+  src: url("./fonts/gilroy-semibold.woff2") format("woff2"); 
+  font-style: normal; 
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "NotoserifBold";  
+  src: url("./fonts/notoserif-bold.woff2") format("woff2"); 
+  font-style: normal; 
+  font-weight: bold;
+}

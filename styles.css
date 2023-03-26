@@ -1,0 +1,1157 @@
+header {
+  display: grid;
+  grid-template-columns: 70%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 18rem;
+  height: 7rem;
+  background: none;
+  position: absolute;
+  z-index: 2;
+  font-family: "GilroyRegular";
+  font-size: 0.9rem;
+}
+@media all and (max-width: 61.9rem) {
+  header {
+    grid-template-columns: repeat(2, min(45%, 22rem));
+  }
+}
+header > img:first-child {
+  width: 9%;
+  position: absolute;
+  left: 45.5%;
+}
+@media all and (max-width: 61.9rem) {
+  header > img:first-child {
+    position: static;
+    align-self: start;
+    width: 8rem;
+    margin-top: 2.5rem;
+  }
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+@media all and (max-width: 61.9rem) {
+  .header-menu {
+    justify-self: end;
+    width: 3rem;
+  }
+}
+.header-menu a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+@media all and (max-width: 61.9rem) {
+  .header-menu a {
+    align-self: end;
+  }
+}
+.header-menu > div:nth-child(2) {
+  width: 30%;
+  min-width: 17rem;
+  display: flex;
+  justify-content: space-between;
+}
+@media all and (max-width: 61.9rem) {
+  .header-menu > div:nth-child(2) {
+    display: none;
+  }
+}
+.header-menu > div:nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  min-width: 17rem;
+  align-items: center;
+}
+@media all and (max-width: 61.9rem) {
+  .header-menu > div:nth-child(3) {
+    display: none;
+  }
+}
+.header-menu .header-menu-icon {
+  display: none;
+}
+@media all and (max-width: 61.9rem) {
+  .header-menu .header-menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 2.3rem;
+    cursor: pointer;
+  }
+}
+.header-menu .header-menu-icon .menu-icon-top {
+  width: 3rem;
+  height: 0.3rem;
+  background-color: white;
+  border-radius: 1rem;
+  transition: all 0.3s linear;
+}
+.header-menu .header-menu-icon .menu-icon-medium {
+  width: 2.5rem;
+  height: 0.3rem;
+  background-color: white;
+  border-radius: 1rem;
+  transition: all 0.1s linear;
+}
+.header-menu .header-menu-icon .menu-icon-bottom {
+  width: 3rem;
+  height: 0.3rem;
+  background-color: white;
+  border-radius: 1rem;
+  transition: all 0.3s linear;
+}
+@media all and (max-width: 61.9rem) {
+  .header-menu:hover {
+    flex-direction: column;
+    align-items: end;
+    position: relative;
+    top: 2.3rem;
+    width: 15rem;
+    height: 20rem;
+  }
+  .header-menu:hover > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    min-width: 15rem;
+  }
+  .header-menu:hover > div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 1rem;
+    min-width: 15rem;
+    height: 5.5rem;
+  }
+  .header-menu:hover .header-menu-search {
+    display: none;
+  }
+  .header-menu:hover .header-menu-buttons {
+    justify-content: end;
+    align-items: center;
+    align-self: flex-end;
+    width: 8rem;
+    height: 3.2rem;
+    border-top: 0.1rem solid white;
+    border-bottom: 0.1rem solid white;
+  }
+  .header-menu:hover .header-menu-buttons button {
+    height: 2rem;
+    margin-left: 1rem;
+  }
+  .header-menu:hover .header-menu-media {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: 1.5rem;
+    width: 8rem;
+  }
+  .header-menu:hover .header-menu-media button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .header-menu:hover .header-menu-media img {
+    filter: brightness(0%) invert(99%) sepia(10%) saturate(247%) hue-rotate(225deg) brightness(117%) contrast(100%);
+  }
+  .header-menu:hover .menu-icon-top {
+    transform: rotate(45deg) translate(0.5rem, 0.9rem) scaleX(1.1);
+  }
+  .header-menu:hover .menu-icon-medium {
+    transform: rotate(-45deg) translate(0.1rem, 0) scaleY(0.8);
+    background: transparent;
+  }
+  .header-menu:hover .menu-icon-bottom {
+    transform: rotate(-45deg) translate(0.5rem, -0.9rem) scaleX(1.1);
+  }
+}
+
+.header-menu-search {
+  display: flex;
+  align-items: center;
+}
+.header-menu-search img {
+  margin-right: 1rem;
+}
+@media all and (max-width: 75rem) {
+  .header-menu-search img {
+    width: 0.8rem;
+    margin-right: 0.5rem;
+  }
+}
+.header-menu-search input {
+  background: none;
+  font-family: "GilroyRegular";
+  font-size: 0.9rem;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 3rem;
+}
+
+.header-menu-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+}
+.header-menu-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media all and (max-width: 75rem) {
+  .header-menu-buttons button img {
+    width: 0.8rem;
+  }
+}
+
+.header-menu-media {
+  display: none;
+}
+
+.hero {
+  background-image: url(./img/hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  min-width: 18rem;
+  min-height: 20rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 10vh 15vh 12vh;
+  align-content: end;
+  align-items: start;
+  justify-items: center;
+}
+@media all and (max-width: 40.65rem) {
+  .hero {
+    grid-template-rows: 10vh 15vh 22vw;
+  }
+}
+.hero button {
+  font-family: "GilroyMedium";
+  font-size: 1.1rem;
+  color: white;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: #333333;
+  cursor: pointer;
+  border: 0.1rem solid white;
+  padding: 1vw 2.5vw 0.9vw 2.5vw;
+}
+@media all and (max-width: 61.9rem) {
+  .hero button {
+    padding: 0.62rem 1.55rem 0.55rem;
+  }
+}
+.hero div {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 11% repeat(4, 12%) 11%;
+  grid-template-rows: 100%;
+  place-content: center;
+  align-items: center;
+  border-top: 0.1rem solid white;
+}
+@media all and (max-width: 61.9rem) {
+  .hero div {
+    grid-template-columns: min(14%, 6.9rem) repeat(4, min(15.5%, 7.4rem)) min(14%, 6.9rem);
+  }
+}
+@media all and (max-width: 40.65rem) {
+  .hero div {
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: 1fr 1fr;
+    min-width: 18rem;
+  }
+}
+.hero div img {
+  width: 86%;
+  justify-self: end;
+  border-right: 0.1rem solid white;
+  padding: 0 6% 0 0;
+}
+@media all and (max-width: 40.65rem) {
+  .hero div img {
+    padding: 0;
+    border: none;
+    justify-self: center;
+    width: 100%;
+  }
+}
+.hero div > img:first-child {
+  width: 94%;
+  padding: 0 6% 0 0;
+  justify-self: start;
+}
+@media all and (max-width: 40.65rem) {
+  .hero div > img:first-child {
+    padding: 0;
+    justify-self: center;
+    width: 100%;
+  }
+}
+.hero div > img:last-child {
+  width: 94%;
+  border: none;
+  padding: 0;
+}
+@media all and (max-width: 40.65rem) {
+  .hero div > img:last-child {
+    width: 100%;
+  }
+}
+
+h1 {
+  font-family: "NotoserifBold";
+  font-size: 3vw;
+  animation: title-change 2s infinite;
+}
+@keyframes title-change {
+  0% {
+    color: #381ced;
+  }
+  10% {
+    color: #8810eb;
+  }
+  20% {
+    color: #ea1ced;
+  }
+  30% {
+    color: #eb1040;
+  }
+  40% {
+    color: #eb1b10;
+  }
+  50% {
+    color: #eba210;
+    transform: scale(1.5, 1.5);
+  }
+  60% {
+    color: #e0eb10;
+  }
+  70% {
+    color: #93eb10;
+  }
+  80% {
+    color: #10eb59;
+  }
+  90% {
+    color: #10ebce;
+  }
+  100% {
+    color: #107aeb;
+  }
+}
+@media all and (max-width: 61.9rem) {
+  h1 {
+    font-size: 1.85rem;
+  }
+}
+@media all and (max-width: 40.65rem) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(3, 22.3%);
+  grid-template-rows: 1rem 2rem 8rem 20vw 20vw;
+  grid-template-areas: "p p p" "h2 h2 h2" "buttons buttons buttons" ". . ." ". . .";
+  column-gap: 1.5%;
+  row-gap: 3%;
+  place-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 9vw 0;
+  background: #F9F9F9;
+  position: relative;
+  z-index: 0;
+  min-width: 18rem;
+}
+@media all and (max-width: 61.9rem) {
+  .events {
+    grid-template-columns: repeat(3, min(29%, 13.8rem));
+  }
+}
+@media all and (max-width: 40.65rem) {
+  .events {
+    grid-template-columns: repeat(2, min(43%, 22rem));
+    grid-template-rows: 1rem 2rem 8rem 25vw 25vw 25vw;
+    grid-template-areas: "p p" "h2 h2" "buttons buttons" ". ." ". .";
+    column-gap: 2%;
+    padding: 20% 0;
+  }
+}
+.events p {
+  grid-area: p;
+  font-size: 1.3rem;
+  font-family: "GilroyRegular";
+}
+@media all and (max-width: 40.65rem) {
+  .events p {
+    font-size: 1rem;
+  }
+}
+.events h2 {
+  grid-area: h2;
+}
+@media all and (max-width: 40.65rem) {
+  .events h2 {
+    font-size: 1.2rem;
+    min-width: 16.7rem;
+  }
+}
+.events a {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "GilroyMedium";
+  padding-bottom: 10%;
+}
+@media all and (max-width: 40.65rem) {
+  .events a {
+    font-size: 3.6vw;
+  }
+}
+.events div:nth-child(4) {
+  background: url(./img/card-1.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.events div:nth-child(5) {
+  background: url(./img/card-2.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.events div:nth-child(6) {
+  background: url(./img/card-3.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.events div:nth-child(7) {
+  background: url(./img/card-4.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.events div:nth-child(8) {
+  background: url(./img/card-5.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.events div:nth-child(9) {
+  background: url(./img/card-6.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.events-buttons {
+  grid-area: buttons;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 2%;
+  width: 100%;
+  height: 50%;
+}
+@media all and (max-width: 40.65rem) {
+  .events-buttons {
+    height: 86%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 3rem);
+    row-gap: 10%;
+  }
+}
+.events-buttons button {
+  background: #F9F9F9;
+  border: 0.1rem solid #D6D6D6;
+  cursor: pointer;
+  font-family: "GilroyMedium";
+  font-size: 1.1rem;
+  position: relative;
+  padding-top: 5%;
+  box-sizing: border-box;
+}
+@media all and (max-width: 81.3rem) {
+  .events-buttons button {
+    font-size: 0.8rem;
+  }
+}
+.events-buttons button::after {
+  content: "";
+  background: #F9F9F9;
+  border: 0.1rem solid #D6D6D6;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0.3rem;
+  left: 0.3rem;
+}
+@media all and (max-width: 81.3rem) {
+  .events-buttons button::after {
+    bottom: 0.8rem;
+  }
+}
+@media all and (max-width: 40.65rem) {
+  .events-buttons button::after {
+    display: none;
+  }
+}
+.events-buttons button:hover {
+  background-color: #333333;
+  border: none;
+  color: white;
+  height: 110%;
+  width: 102%;
+}
+@media all and (max-width: 40.65rem) {
+  .events-buttons button:hover {
+    height: 100%;
+    width: 100%;
+  }
+}
+.events-buttons button:hover::after {
+  display: none;
+}
+
+.salons {
+  padding: 5% 0;
+  display: grid;
+  grid-template-columns: min(90%, 45rem);
+  grid-template-rows: 4rem 4rem 1fr 7rem;
+  row-gap: 3%;
+  place-content: center;
+  align-items: center;
+  justify-items: center;
+  background: url(./img/background.jpg);
+  min-width: 18rem;
+}
+.salons p:first-child {
+  font-size: 1.3rem;
+  font-family: "GilroyRegular";
+  align-self: end;
+  color: white;
+}
+@media all and (max-width: 40.65rem) {
+  .salons p:first-child {
+    font-size: 1rem;
+  }
+}
+.salons h2 {
+  align-self: start;
+  text-align: center;
+  color: white;
+}
+@media all and (max-width: 40.65rem) {
+  .salons h2 {
+    font-size: 1.2rem;
+    min-width: 16.7rem;
+  }
+}
+.salons p {
+  text-align: center;
+  font-family: "GilroyRegular";
+  font-size: 1.1rem;
+  color: white;
+}
+.salons button {
+  border: none;
+  padding: 1vw 2.5vw 0.9vw 2.5vw;
+  cursor: pointer;
+}
+@media all and (max-width: 61.9rem) {
+  .salons button {
+    padding: 0.62rem 1.55rem 0.55rem;
+  }
+}
+
+.advices {
+  padding: 9vw 0;
+  display: grid;
+  grid-template-columns: repeat(3, 22.3%);
+  grid-template-rows: 1rem 5rem 20vw 5rem;
+  grid-template-areas: "p p p" "h2 h2 h2" ". . ." "button button button";
+  column-gap: 1.5%;
+  row-gap: 4%;
+  place-content: center;
+  justify-items: center;
+  align-items: center;
+  background: #F9F9F9;
+  min-width: 18rem;
+}
+@media all and (max-width: 61.9rem) {
+  .advices {
+    grid-template-columns: repeat(3, min(29%, 13.8rem));
+  }
+}
+@media all and (max-width: 40.65rem) {
+  .advices {
+    grid-template-columns: 90%;
+    grid-template-rows: 1rem 4rem 25vw 25vw 25vw 4rem;
+    grid-template-areas: "p" "h2" "." "." "." "button";
+    row-gap: 1%;
+    padding: 20% 0;
+  }
+}
+.advices p {
+  grid-area: p;
+  font-size: 1.3rem;
+  font-family: "GilroyRegular";
+}
+@media all and (max-width: 40.65rem) {
+  .advices p {
+    font-size: 1rem;
+  }
+}
+.advices h2 {
+  grid-area: h2;
+  align-self: start;
+  text-align: center;
+}
+@media all and (max-width: 40.65rem) {
+  .advices h2 {
+    font-size: 1.2rem;
+    min-width: 16.7rem;
+  }
+}
+.advices a {
+  text-decoration: none;
+  color: white;
+  white-space: pre-line;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: "GilroyRegular";
+  padding-bottom: 10%;
+}
+@media all and (max-width: 81.3rem) {
+  .advices a {
+    font-size: 1.6vw;
+  }
+}
+@media all and (max-width: 40.65rem) {
+  .advices a {
+    font-size: 1rem;
+  }
+}
+.advices button {
+  grid-area: button;
+  border: none;
+  padding: 1vw 2.5vw 0.9vw 2.5vw;
+  background: #333333;
+  color: white;
+  cursor: pointer;
+  align-self: end;
+}
+@media all and (max-width: 61.9rem) {
+  .advices button {
+    padding: 0.62rem 1.55rem 0.55rem;
+  }
+}
+.advices div:nth-child(3) {
+  background: url(./img/advice-1.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+@media all and (max-width: 40.65rem) {
+  .advices div:nth-child(3) {
+    width: 40%;
+    min-width: 15rem;
+  }
+}
+.advices div:nth-child(4) {
+  background: url(./img/advice-2.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+@media all and (max-width: 40.65rem) {
+  .advices div:nth-child(4) {
+    width: 40%;
+    min-width: 15rem;
+  }
+}
+.advices div:nth-child(5) {
+  background: url(./img/advice-3.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+@media all and (max-width: 40.65rem) {
+  .advices div:nth-child(5) {
+    width: 40%;
+    min-width: 15rem;
+  }
+}
+
+.media {
+  padding: 0 0 9vw 0;
+  background: #F9F9F9;
+  display: grid;
+  grid-template-columns: repeat(4, 17.5%);
+  grid-template-rows: 3rem 5rem repeat(2, 20vw);
+  grid-template-areas: "p p p p" "h2 h2 h2 h2" "card-1 card-1 . ." ". . card-2 card-2";
+  place-content: center;
+  justify-items: center;
+  min-width: 18rem;
+}
+@media all and (max-width: 61.9rem) {
+  .media {
+    grid-template-columns: repeat(4, min(22.5%, 11rem));
+  }
+}
+@media all and (max-width: 40.65rem) {
+  .media {
+    grid-template-columns: repeat(2, 45%);
+    grid-template-rows: 1.5rem 3rem repeat(4, 40vw);
+    grid-template-areas: "p p" "h2 h2" "card-1 card-1" ". ." "card-2 card-2" ". .";
+    padding: 0 0 20% 0;
+  }
+}
+.media p {
+  grid-area: p;
+  font-size: 1.3rem;
+  font-family: "GilroyRegular";
+}
+@media all and (max-width: 40.65rem) {
+  .media p {
+    font-size: 1rem;
+  }
+}
+.media h2 {
+  grid-area: h2;
+}
+@media all and (max-width: 40.65rem) {
+  .media h2 {
+    font-size: 1.2rem;
+    min-width: 16.7rem;
+  }
+}
+.media img {
+  width: 100%;
+  height: 100%;
+}
+.media div:nth-child(3) {
+  grid-area: card-1;
+  background: url(./img/media-1.jpg);
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  place-content: center;
+}
+.media div:nth-child(8) {
+  grid-area: card-2;
+  background: url(./img/media-6.jpg);
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  place-content: center;
+}
+.media .arrow-play {
+  width: 10%;
+}
+
+.mailing {
+  padding: 5% 0;
+  display: grid;
+  grid-template-columns: 25% 42%;
+  grid-template-rows: 2rem 3rem 10rem;
+  column-gap: 3%;
+  row-gap: 3%;
+  grid-template-areas: "p p" "h2 h2" ". .";
+  place-content: center;
+  align-items: center;
+  justify-items: center;
+  background: url(./img/background.jpg);
+  min-width: 18rem;
+}
+@media all and (max-width: 61.9rem) {
+  .mailing {
+    grid-template-columns: min(32.1%, 16rem) min(52.9%, 28.1rem);
+  }
+}
+@media all and (max-width: 40.65rem) {
+  .mailing {
+    grid-template-columns: 90%;
+    grid-template-rows: 2rem 3rem 10rem 9rem;
+    column-gap: 0;
+    row-gap: 0;
+    grid-template-areas: "p" "h2" "." ".";
+    padding: 10% 0;
+  }
+}
+.mailing > p {
+  grid-area: p;
+  font-size: 1.3rem;
+  font-family: "GilroyRegular";
+  align-self: end;
+  text-align: center;
+  color: white;
+}
+@media all and (max-width: 40.65rem) {
+  .mailing > p {
+    font-size: 1rem;
+  }
+}
+.mailing h2 {
+  grid-area: h2;
+  align-self: start;
+  text-align: center;
+  color: white;
+}
+@media all and (max-width: 40.65rem) {
+  .mailing h2 {
+    font-size: 1.2rem;
+    min-width: 16.7rem;
+    align-self: center;
+  }
+}
+.mailing div:nth-child(3) {
+  height: 70%;
+  width: min(15rem, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-self: end;
+}
+@media all and (max-width: 40.65rem) {
+  .mailing div:nth-child(3) {
+    justify-self: center;
+  }
+}
+.mailing div:nth-child(3) p {
+  font-size: 1.1rem;
+  font-family: "GilroyRegular";
+  color: white;
+}
+@media all and (max-width: 61.9rem) {
+  .mailing div:nth-child(3) p {
+    font-size: max(0.8rem, 1.8vw);
+  }
+}
+.mailing div:nth-child(3) p::before {
+  content: "";
+  background: url(./img/arrow-right.svg);
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 1rem;
+}
+.mailing div:nth-child(4) {
+  border: 0.1rem solid white;
+  width: min(30rem, 100%);
+  height: 70%;
+  justify-self: start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+@media all and (max-width: 40.65rem) {
+  .mailing div:nth-child(4) {
+    justify-self: center;
+  }
+}
+
+.input-mailing {
+  background-color: white;
+  width: 94%;
+  height: 75%;
+  display: grid;
+  grid-template-columns: 57% 32%;
+  grid-template-rows: 65%;
+  column-gap: 3%;
+  place-content: center;
+}
+.input-mailing input {
+  width: 90%;
+  height: 100%;
+  border: 0.1rem solid #D6D6D6;
+  font-family: "GilroyMedium";
+  padding: 0 0 0 1vw;
+}
+.input-mailing input::placeholder {
+  color: rgba(51, 51, 51, 0.5019607843);
+}
+.input-mailing button {
+  background: #333333;
+  border: none;
+  font-family: "GilroyMedium";
+  font-size: 0.9rem;
+  color: white;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+@media all and (max-width: 40.65rem) {
+  .input-mailing button {
+    font-size: 0.8rem;
+  }
+}
+
+footer {
+  background: #F9F9F9;
+  padding: 8% 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 16.9%);
+  grid-template-rows: 1fr 15rem 5rem;
+  grid-template-areas: ". . . ." "links payment . ." "div div div div";
+  column-gap: 1.5%;
+  place-content: center;
+  min-width: 18rem;
+}
+@media all and (max-width: 61.9rem) {
+  footer {
+    grid-template-columns: repeat(4, min(21.4%, 11rem));
+  }
+}
+@media all and (max-width: 40.65rem) {
+  footer {
+    grid-template-columns: repeat(2, 43.5%);
+    grid-template-rows: 1fr 15rem 1fr 15rem 5rem;
+    grid-template-areas: ". ." "links payment" ". ." ". ." "div div";
+  }
+}
+footer p {
+  font-family: "GilroyRegular";
+  font-size: 0.9rem;
+  white-space: pre-line;
+}
+@media all and (max-width: 81.3rem) {
+  footer p {
+    white-space: normal;
+  }
+}
+footer a {
+  text-decoration: none;
+  color: #333333;
+  font-family: "GilroyRegular";
+  font-size: 0.9rem;
+  cursor: pointer;
+  hyphens: auto;
+}
+footer div:nth-child(1) {
+  border-bottom: 0.1rem solid #333333;
+  align-self: end;
+}
+footer div:nth-child(1) p {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: "GilroyMedium";
+  margin-bottom: 1rem;
+}
+footer > div:nth-child(2) {
+  border-bottom: 0.1rem solid #333333;
+  align-self: end;
+}
+footer > div:nth-child(2) p {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: "GilroyMedium";
+  margin-bottom: 1rem;
+}
+footer div:nth-child(3) {
+  border-bottom: 0.1rem solid #333333;
+  align-self: end;
+}
+footer div:nth-child(3) p {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: "GilroyMedium";
+  margin-bottom: 1rem;
+}
+footer div:nth-child(4) {
+  border-bottom: 0.1rem solid #333333;
+  align-self: end;
+}
+footer div:nth-child(4) p {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: "GilroyMedium";
+  margin-bottom: 1rem;
+}
+footer div:nth-child(5) {
+  grid-area: links;
+  height: 55%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer div:nth-child(6) {
+  grid-area: payment;
+  height: 55%;
+  margin-top: 2rem;
+}
+footer div:nth-child(6) img {
+  margin-top: 1.5rem;
+  margin-right: 5%;
+}
+footer div:nth-child(7) {
+  height: 45%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer div:nth-child(7) p::before {
+  content: "";
+  background: url(./img/phone.svg);
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1rem;
+  display: inline-block;
+  margin-right: 5%;
+}
+@media all and (max-width: 40.65rem) {
+  footer div:nth-child(7) p::before {
+    display: none;
+  }
+}
+footer div:nth-child(7) p:last-child::before {
+  content: "";
+  background: url(./img/mail.svg);
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1rem;
+}
+footer div:nth-child(8) {
+  height: 45%;
+  margin-top: 2rem;
+}
+footer div:nth-child(8) div {
+  width: max(60%, 8rem);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+footer div:nth-child(8) div button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-last {
+  grid-area: div;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "GilroyRegular";
+  font-size: 0.9rem;
+  border-top: 0.1rem solid #333333;
+}
+@media all and (max-width: 40.65rem) {
+  .footer-last {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+.footer-last a {
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+}
+.footer-last a:last-child {
+  text-decoration: underline;
+  font-family: "GilroySemibold";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #333333;
+}
+
+h2 {
+  font-size: 1.9rem;
+  font-family: "NotoserifBold";
+}
+
+@font-face {
+  font-family: "GilroyRegular";
+  src: url("./fonts/gilroy-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GilroyMedium";
+  src: url("./fonts/gilroy-medium.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "GilroySemibold";
+  src: url("./fonts/gilroy-semibold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "NotoserifBold";
+  src: url("./fonts/notoserif-bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,239 @@
+@use 'mixins';
+
+header {
+  display: grid;
+  grid-template-columns: 70%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 18rem;
+  height: 7rem;
+  background: none;
+  position: absolute;
+  z-index: 2;
+  font-family: 'GilroyRegular';
+  font-size: 0.9rem;
+
+  @include mixins.media619rem {
+    grid-template-columns: repeat(2, min(45%, 22rem));
+  }
+
+  > img:first-child {
+    width: 9%;
+    position: absolute;
+    left: 50% - 4.5%;
+
+    @include mixins.media619rem {
+      position: static;
+      align-self: start;
+      width: 8rem;
+      margin-top: 2.5rem;
+    }
+  }
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @include mixins.media619rem {
+    justify-self: end;
+    width: 3rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+
+    @include mixins.media619rem {
+      align-self: end;
+    }
+  }
+
+  > div:nth-child(2) {
+    width: 30%;
+    min-width: 17rem;
+    display: flex;
+    justify-content: space-between;
+
+    @include mixins.media619rem {
+      display: none;
+    }
+  }
+
+  > div:nth-child(3) {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    min-width: 17rem;
+    align-items: center;
+
+    @include mixins.media619rem{
+      display: none;
+    }
+  }
+
+  .header-menu-icon {
+    display: none;
+  
+    @include mixins.media619rem {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 2.3rem;
+      cursor: pointer;
+    }
+  
+    .menu-icon-top {
+      width: 3rem;
+      height: 0.3rem;
+      background-color: white;
+      border-radius: 1rem;
+      transition: all 0.3s linear;
+    }
+  
+    .menu-icon-medium {
+      width: 2.5rem;
+      height: 0.3rem;
+      background-color: white;
+      border-radius: 1rem;
+      transition: all 0.1s linear;
+    }
+  
+    .menu-icon-bottom {
+      width: 3rem;
+      height: 0.3rem;
+      background-color: white;
+      border-radius: 1rem;
+      transition: all 0.3s linear;
+    }
+  }
+
+  @include mixins.media619rem {
+    &:hover {
+      flex-direction: column;
+      align-items: end;
+      position: relative;
+      top: 2.3rem;
+      width: 15rem;
+      height: 20rem;
+
+      > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        height: 5rem;
+        min-width: 15rem;
+      }
+
+      > div:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        bottom: 1rem;
+        min-width: 15rem;
+        height: 5.5rem;
+      }
+
+      .header-menu-search {
+        display: none;
+      }
+
+      .header-menu-buttons {
+        justify-content: end;
+        align-items: center;
+        align-self: flex-end;
+        width: 8rem;
+        height: 3.2rem;
+        border-top: 0.1rem solid white;
+        border-bottom: 0.1rem solid white;
+
+        button {
+          height: 2rem;
+          margin-left: 1rem;
+        }
+      }
+
+      .header-menu-media {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        bottom: 1.5rem;
+        width: 8rem;
+
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+
+        img {
+          filter: brightness(0%) invert(99%) sepia(10%) saturate(247%) 
+          hue-rotate(225deg) brightness(117%) contrast(100%);
+        }
+      }
+
+      .menu-icon-top {
+        transform: rotate(45deg) translate(0.5rem, 0.9rem) scaleX(1.1);
+      }
+  
+      .menu-icon-medium {
+        transform: rotate(-45deg) translate(0.1rem, 0) scaleY(0.8);
+        background: transparent;
+      }
+  
+      .menu-icon-bottom {
+        transform: rotate(-45deg) translate(0.5rem, -0.9rem) scaleX(1.1);
+      }
+    }
+  }
+}
+
+.header-menu-search {
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: 1rem;
+
+    @include mixins.media75rem {
+      width: 0.8rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  input {
+   background: none;
+   font-family: 'GilroyRegular';
+   font-size: 0.9rem;
+   color: white;
+   outline: none;
+   border: none;
+   cursor: pointer;
+   width: 3rem;
+  }
+}
+
+.header-menu-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @include mixins.media75rem {
+      img {
+        width: 0.8rem;
+      }
+    }
+  }
+}
+
+.header-menu-media {
+  display: none;
+}
+

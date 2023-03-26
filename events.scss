@@ -1,0 +1,163 @@
+@use 'mixins';
+
+@use 'vars';
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(3, 22.3%);
+  grid-template-rows: 1rem 2rem 8rem 20vw 20vw;
+  grid-template-areas: "p p p" "h2 h2 h2" "buttons buttons buttons" ". . ." ". . .";
+  column-gap: 1.5%;
+  row-gap: 3%;
+  place-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 9vw 0;
+  background: #F9F9F9;
+  position: relative;
+  z-index: 0;
+  min-width: 18rem;
+
+  @include mixins.media619rem {
+    grid-template-columns: repeat(3, min(29%, 13.8rem));
+  }
+
+  @include mixins.media4065rem {
+    grid-template-columns: repeat(2, min(43%, 22rem));
+    grid-template-rows: 1rem 2rem 8rem 25vw 25vw 25vw;
+    grid-template-areas: "p p" "h2 h2" "buttons buttons" ". ." ". .";
+    column-gap: 2%;
+    padding: 20% 0;
+  }
+
+  p {
+    grid-area: p;
+    @include mixins.overhead;
+
+    @include mixins.media4065rem {
+      font-size: 1rem;
+    }
+  }
+
+  h2 {
+    grid-area: h2;
+
+    @include mixins.media4065rem {
+      font-size: 1.2rem;
+      min-width: 16.7rem;
+    }
+  }
+
+  a {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'GilroyMedium';
+    padding-bottom: 10%;
+
+    @include mixins.media4065rem {
+      font-size: 3.6vw;
+    }
+  }
+
+  div:nth-child(4) {
+    background: url(./img/card-1.jpg);
+    @include mixins.cards;
+  }
+
+  div:nth-child(5) {
+    background: url(./img/card-2.jpg);
+    @include mixins.cards;
+  }
+
+  div:nth-child(6) {
+    background: url(./img/card-3.jpg);
+    @include mixins.cards;
+  }
+
+  div:nth-child(7) {
+    background: url(./img/card-4.jpg);
+    @include mixins.cards;
+  }
+  div:nth-child(8) {
+    background: url(./img/card-5.jpg);
+    @include mixins.cards;
+  }
+  div:nth-child(9) {
+    background: url(./img/card-6.jpg);
+    @include mixins.cards;
+  }
+}
+
+.events-buttons {
+  grid-area: buttons;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 2%;
+  width: 100%;
+  height: 50%;
+
+  @include mixins.media4065rem {
+    height: 86%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 3rem);
+    row-gap: 10%;
+  }
+
+  button {
+    background: #F9F9F9;
+    border: 0.1rem solid #D6D6D6;
+    cursor: pointer;
+
+    font-family: 'GilroyMedium';
+    font-size: 1.1rem;
+    position: relative;
+    padding-top: 5%;
+    box-sizing: border-box;
+    
+
+    @include mixins.media813rem {
+      font-size: 0.8rem;
+    }
+
+    &::after {
+      content: '';
+      background: #F9F9F9;
+      border: 0.1rem solid #D6D6D6;
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 0.3rem;
+      left: 0.3rem;
+
+      @include mixins.media813rem {
+        bottom: 0.8rem;
+      }
+
+      @include mixins.media4065rem {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background-color: vars.$background;
+      border: none;
+      color: white;
+      height: 110%;
+      width: 102%;
+
+      @include mixins.media4065rem {
+        height: 100%;
+        width: 100%;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

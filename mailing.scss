@@ -1,0 +1,141 @@
+@use 'mixins';
+
+@use 'vars';
+
+.mailing {
+  padding: 5% 0;
+  display: grid;
+  grid-template-columns: 25% 42%;
+  grid-template-rows: 2rem 3rem 10rem;
+  column-gap: 3%;
+  row-gap: 3%;
+  grid-template-areas: "p p" "h2 h2" ". .";
+  place-content: center;
+  align-items: center;
+  justify-items: center;
+  background: url(./img/background.jpg);
+  min-width: 18rem;
+
+  @include mixins.media619rem {
+    grid-template-columns: min(32.1%, 16rem) min(52.9%, 28.1rem);
+  }
+
+  @include mixins.media4065rem {
+    grid-template-columns: 90%;
+    grid-template-rows: 2rem 3rem 10rem 9rem;
+    column-gap: 0;
+    row-gap: 0;
+    grid-template-areas: "p" "h2" "." ".";
+    padding: 10% 0;
+  }
+
+  > p {
+    grid-area: p;
+    @include mixins.overhead;
+    align-self: end;
+    text-align: center;
+    color: white;
+
+    @include mixins.media4065rem {
+      font-size: 1rem;
+    }
+  }
+
+  h2 {
+    grid-area: h2;
+    align-self: start;
+    text-align: center;
+    color: white;
+
+    @include mixins.media4065rem {
+      font-size: 1.2rem;
+      min-width: 16.7rem;
+      align-self: center;
+    }
+  }
+
+  div:nth-child(3) {
+    height: 70%;
+    width: min(15rem, 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-self: end;
+
+    @include mixins.media4065rem {
+      justify-self: center;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-family: 'GilroyRegular';
+      color: white;
+  
+      @include mixins.media619rem {
+        font-size: max(0.8rem, 1.8vw);
+      }
+    }
+  
+    p::before {
+      content: '';
+      background: url(./img/arrow-right.svg);
+      background-repeat: no-repeat;
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
+  div:nth-child(4) {
+    border: 0.1rem solid white;
+    width: min(30rem, 100%);
+    height: 70%;
+    justify-self: start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    @include mixins.media4065rem {
+      justify-self: center;
+    }
+  }
+}
+
+.input-mailing {
+  background-color: white;
+  width: 94%;
+  height: 75%;
+  display: grid;
+  grid-template-columns: 57% 32%;
+  grid-template-rows: 65%;
+  column-gap: 3%;
+  place-content: center;
+
+  input {
+    width: 90%;
+    height: 100%;
+    border: 0.1rem solid #D6D6D6;
+    font-family: 'GilroyMedium';
+    padding: 0 0 0 1vw;
+  }
+
+  input::placeholder {
+    color: #33333380;
+  }
+
+  button {
+    background: vars.$background;
+    border: none;
+    font-family: 'GilroyMedium';
+    font-size: 0.9rem;
+    color: white;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+    @include mixins.media4065rem {
+      font-size: 0.8rem;
+    }
+  }
+}

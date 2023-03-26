@@ -1,0 +1,154 @@
+@use 'mixins';
+
+footer {
+  background: #F9F9F9;
+  padding: 8% 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 16.9%);
+  grid-template-rows: 1fr 15rem 5rem;
+  grid-template-areas: ". . . ." "links payment . ." "div div div div";
+  column-gap: 1.5%;
+  place-content: center;
+  min-width: 18rem;
+
+  @include mixins.media619rem {
+    grid-template-columns: repeat(4, min(21.4%, 11rem));
+  }
+
+  @include mixins.media4065rem {
+    grid-template-columns: repeat(2, 43.5%);
+    grid-template-rows: 1fr 15rem 1fr 15rem 5rem;
+    grid-template-areas: ". ." "links payment" ". ." ". ." "div div";
+  }
+
+  p {
+    font-family: 'GilroyRegular';
+    font-size: 0.9rem;
+    white-space: pre-line;
+
+    @include mixins.media813rem {
+      white-space: normal;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #333333;
+    font-family: 'GilroyRegular';
+    font-size: 0.9rem;
+    cursor: pointer;
+    hyphens: auto;
+  }
+
+  div:nth-child(1) {
+    @include mixins.footer-title;
+  }
+
+  > div:nth-child(2) {
+    @include mixins.footer-title;
+  }
+
+  div:nth-child(3) {
+    @include mixins.footer-title;
+  }
+
+  div:nth-child(4) {
+    @include mixins.footer-title;
+  }
+
+  div:nth-child(5) {
+    grid-area: links;
+    height: 55%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  div:nth-child(6) {
+    grid-area: payment;
+    height: 55%;
+    margin-top: 2rem;
+    
+    img {
+      margin-top: 1.5rem;
+      margin-right: 5%;
+    }
+  }
+
+  div:nth-child(7) {
+    height: 45%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    p::before {
+      content: '';
+      background: url(./img/phone.svg);
+      background-repeat: no-repeat;
+      width: 1.5rem;
+      height: 1rem;
+      display: inline-block;
+      margin-right: 5%;
+
+      @include mixins.media4065rem {
+        display: none;
+      }
+    }
+
+    p:last-child::before {
+      content: '';
+      background: url(./img/mail.svg);
+      background-repeat: no-repeat;
+      width: 1.5rem;
+      height: 1rem;
+    }
+  }
+
+  div:nth-child(8) {
+    height: 45%;
+    margin-top: 2rem;
+
+    div {
+      width: max(60%, 8rem);
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.footer-last {
+  grid-area: div;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'GilroyRegular';
+  font-size: 0.9rem;
+  border-top: 0.1rem solid #333333;
+
+  @include mixins.media4065rem {
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  a {
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+  }
+
+  a:last-child {
+    text-decoration: underline;
+    font-family: 'GilroySemibold';
+  }
+}
